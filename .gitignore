@@ -1,0 +1,13 @@
+# Generated loaders
+claim-loader.php
+*.loader.php
+
+# Vercel
+.vercel/
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
