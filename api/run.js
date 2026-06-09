@@ -1,11 +1,12 @@
-import crypto from 'crypto';
+const crypto = require('crypto');
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   const SECRET_KEY = process.env.ENCRYPTION_KEY;
   if (!SECRET_KEY) {
     return res.status(500).json({ error: 'ENCRYPTION_KEY not configured' });
   }
   const KEY_HASH = crypto.createHash('sha256').update(SECRET_KEY).digest();
+
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
@@ -43,4 +44,4 @@ export default async function handler(req, res) {
   } catch (err) {
     return res.status(500).json({ error: 'Decryption failed' });
   }
-}
+};

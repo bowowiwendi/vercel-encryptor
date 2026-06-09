@@ -1,5 +1,3 @@
 {
-  "name": "vercel-encryptor",
-  "private": true,
-  "type": "module"
+  "private": true
 }
